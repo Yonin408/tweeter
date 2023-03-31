@@ -1,0 +1,28 @@
+textarea {
+    display: flex;
+    background-color: #f4f1ec;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.532);
+    border: none;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.706);
+    justify-content: flex-start;
+    margin: auto;
+    width: 100%;
+}
+
+#tweet {
+    background-color: #4056A1;
+    font-family: 'Bungee', cursive;
+    color: white;
+font-size: 20px;
+}
+.tweets {
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.counter {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Bungee', cursive;
+}
