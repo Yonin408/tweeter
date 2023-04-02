@@ -35,20 +35,30 @@ font-size: 20px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     color: #4056A1;
-    margin-right: 1em;
+    /* margin-right: 1em; */
 }
 
 .uName {
     display: flex;
     font-family: 'Bungee', cursive;
-    font-size: 20px;
+    font-size: 25px;
     opacity: .75;
     margin-left: 5em;
+}
+
+.tweet-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .pTweet {
     margin-left: 1em;
  
+}
+
+.tweet-content {
+    margin-bottom: 20px;
 }
 
 .pBorder {

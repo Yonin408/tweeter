@@ -42,7 +42,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section id="tweets-container">
         <h2>Compose Tweet</h2>
         <form method="POST", action="/tweets">
           <label for="tweet-text" class="tweets">What are you humming about?</label>
@@ -53,9 +53,11 @@
           </div>
           <article class ="oBorder">
             <header class="pBorder">
+              <div class ='tweet-header'>
               <label for="uName" class="uName">Joe Biden</label>
               <label for="uAccount"class="handle"> @Potus</label>
-              Hello World
+            </div>
+             <label for="tweet-content" class="tweet-content"> Hello World</label>
             </header>
             <label for="date" class="date">10 days ago</label>
             <button class="interact"><i class="fa-solid fa-flag"></i></button>
