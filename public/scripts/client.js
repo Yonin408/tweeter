@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(function() { // use jQuery document ready function to ensure that all elements in the DOM are loaded before manipulating them
     const data = [
         {
@@ -29,9 +30,20 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
           "created_at": 1461113959088
         }
       ]
-    renderTweets(data);
-  });
+      const $form = $(`#create-tweet`);
 
+$form.on('submit', (event) => {
+    event.preventDefault();
+    const urlencoded = $form.serialize();
+    console.log(urlencoded)
+    $.ajax({
+        method: "POST",
+        url: '/tweets',
+        data: urlencoded
+    }).then((response) => {
+        console.log(response);
+    });
+});
 
 const renderTweets = function(tweets) {
     for (const key of tweets) {
@@ -54,6 +66,11 @@ const $tweet = (`     <article class ="oBorder">
 </article>`)
 return $tweet;
 }
+
+    renderTweets(data);
+  });
+
+
 
 
 
