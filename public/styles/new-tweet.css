@@ -19,10 +19,71 @@ font-size: 20px;
 }
 .tweets {
     display: flex;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+    opacity: .75;
 }
 .counter {
     display: flex;
     justify-content: flex-end;
     font-family: 'Bungee', cursive;
+}
+
+.handle {
+    display: flex; 
+    justify-content: flex-end;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    color: #4056A1;
+    margin-right: 1em;
+}
+
+.uName {
+    display: flex;
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+    opacity: .75;
+    margin-left: 5em;
+}
+
+.pTweet {
+    margin-left: 1em;
+ 
+}
+
+.pBorder {
+    border-bottom: solid rgba(0, 0, 0, 0.706) 5px;
+    width: 95%;
+    margin: auto;
+}
+.oBorder {
+    height: 200px;
+    border: solid rgba(0, 0, 0, 0.706) 5px;
+
+}
+
+.oBorder:hover {
+    box-shadow: #4057a186 10px 10px;
+
+}
+
+.date {
+    margin-left: 1.5em;
+}
+.interact {
+    display: flex;
+    float: right;
+    margin-top: 12px;
+    margin-right: .5em;
+    background-color: #f4f1ec;
+    border: 0;
+}
+
+.fa-solid {
+    color: #4056A1;
+    margin: auto;
+}
+
+.fa-solid:hover {
+    color: rgb(208, 174, 41);
 }
