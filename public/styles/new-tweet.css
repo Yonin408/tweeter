@@ -30,20 +30,29 @@ font-size: 20px;
 }
 
 .handle {
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     color: #4056A1;
+    margin-left: auto;
     /* margin-right: 1em; */
 }
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 .uName {
     display: flex;
     font-family: 'Bungee', cursive;
     font-size: 25px;
     opacity: .75;
-    margin-left: 5em;
+
+
 }
 
 .tweet-header {
@@ -67,7 +76,7 @@ font-size: 20px;
     margin: auto;
 }
 .oBorder {
-    height: 200px;
+    height: 250px;
     border: solid rgba(0, 0, 0, 0.706) 5px;
 
 }
@@ -76,6 +85,7 @@ font-size: 20px;
     box-shadow: #4057a186 10px 10px;
 
 }
+
 
 .date {
     margin-left: 1.5em;

@@ -47,20 +47,18 @@
 
    <!-- Page-specific (main) content here -->
    <main class="container">
+    <form id="create-tweet">
+    <h2>Compose Tweet</h2>
+    <label for="tweet-text" class="tweets">What are you humming about?</label>
+    <textarea name="text" id="tweet-text"></textarea>
+    <div>
+      <button type="submit" id="tweet">Tweet</button>
+      <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+    </div>
      <section id="tweets-container">
-       <h2>Compose Tweet</h2>
-       <form id="create-tweet">
-         <label for="tweet-text" class="tweets">What are you humming about?</label>
-         <textarea name="text" id="tweet-text"></textarea>
-         <div>
-           <button type="submit" id="tweet">Tweet</button>
-           <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
-         </div>
        </form>
      </section>
    </main>
-
-
  </body>
 </html>
 
