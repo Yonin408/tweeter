@@ -9,8 +9,7 @@ const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: false }));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
@@ -35,7 +34,7 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 app.post('/tweets', (req, res) => {
-  
+
 })
 
 app.listen(PORT, () => {
