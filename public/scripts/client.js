@@ -34,26 +34,28 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
     }
    
    
-   const createTweetElement = function(obj) {
-   const $tweet = (`  
-   <article class ="oBorder">
-   <header class="pBorder">
-   <div class="main-content">
-   <img src="${obj.user.avatars}">
-    <label for="uName" class="uName">${obj.user.name}</label>\
-    <div class="space"></div>
-    <label for="uAccount"class="handle">${obj.user.handle}</label>
-    </div>
-    ${obj.content.text}
-   </header>
-   <span class="date"></span>
-   <script>$('.date').text(timeago.format((${obj.created_at})));</script>
-   <button class="interact"><i class="fa-solid fa-flag"></i></button>
-   <button class="interact"><i class="fa-solid fa-retweet"></i></button>
-   <button class="interact"><i class="fa-sharp fa-solid fa-heart"></i></button>
-   </article>`)
-   return $tweet;
-   }
+    const createTweetElement = function(obj) {
+      const $tweet = $(`
+        <article class="oBorder">
+          <header class="pBorder">
+            <div class="main-content">
+              <img src="${obj.user.avatars}">
+              <label for="uName" class="uName">${$('<div>').text(obj.user.name).html()}</label>
+              <div class="space"></div>
+              <label for="uAccount" class="handle">${$('<div>').text(obj.user.handle).html()}</label>
+            </div>
+            ${$('<div>').text(obj.content.text).html()}
+          </header>
+          <label class="date"></label>
+          <script>$('.date').text(timeago.format(${obj.created_at}));</script>
+          <button class="interact"><i class="fa-solid fa-flag"></i></button>
+          <button class="interact"><i class="fa-solid fa-retweet"></i></button>
+          <button class="interact"><i class="fa-sharp fa-solid fa-heart"></i></button>
+        </article>`);
+      return $tweet;
+    }
+    
+    
    
    
    const loadTweets = function() {
@@ -70,4 +72,27 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
    loadTweets();
     });
    
-   
+    // [
+    //   {
+    //     "user": {
+    //       "name": "Newton",
+    //       "avatars": "https://i.imgur.com/73hZDYK.png",
+    //       "handle": "@SirIsaac"
+    //     },
+    //     "content": {
+    //       "text": "If I have seen further it is by standing on the shoulders of giants"
+    //     },
+    //     "created_at": 1680388629770
+    //   },
+    //   {
+    //     "user": {
+    //       "name": "Descartes",
+    //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+    //       "handle": "@rd"
+    //     },
+    //     "content": {
+    //       "text": "Je pense , donc je suis"
+    //     },
+    //     "created_at": 1680475029770
+    //   }
+    // ]
