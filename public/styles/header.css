@@ -22,3 +22,12 @@ background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png
     display: flex;
     flex-direction: row-reverse;
 }
+
+/*desktop view*/
+@media only screen and (min-width: 1024px) {
+    .pAccount {
+        width: 30%;
+
+    }
+
+}

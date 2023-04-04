@@ -6,8 +6,8 @@
 
 
 
-
-$(document).ready(function() { // use jQuery document ready function to ensure that all elements in the DOM are loaded before manipulating them
+ //jQuery document
+$(document).ready(function() {
     const $form = $(`#create-tweet`);
 
     $form.on('submit', (event) => {
@@ -26,6 +26,8 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
         })
   
     });
+
+    //renders tweets
    const renderTweets = function(tweets) {
       for (const key of tweets) {
          const $tweet = createTweetElement(key)
@@ -33,7 +35,7 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
       }
     }
    
-   
+   //creates tweets from given object
     const createTweetElement = function(obj) {
       const $tweet = $(`
         <article class="oBorder">
@@ -47,7 +49,8 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
             ${$('<div>').text(obj.content.text).html()}
           </header>
           <label class="date"></label>
-          <script>$('.date').text(timeago.format(${obj.created_at}));</script>
+          <script>$('
+          .date').text(timeago.format(${obj.created_at}));</script>
           <button class="interact"><i class="fa-solid fa-flag"></i></button>
           <button class="interact"><i class="fa-solid fa-retweet"></i></button>
           <button class="interact"><i class="fa-sharp fa-solid fa-heart"></i></button>
@@ -57,7 +60,7 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
     
     
    
-   
+   //loads tweets on page
    const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweets) {
@@ -72,27 +75,3 @@ $(document).ready(function() { // use jQuery document ready function to ensure t
    loadTweets();
     });
    
-    // [
-    //   {
-    //     "user": {
-    //       "name": "Newton",
-    //       "avatars": "https://i.imgur.com/73hZDYK.png",
-    //       "handle": "@SirIsaac"
-    //     },
-    //     "content": {
-    //       "text": "If I have seen further it is by standing on the shoulders of giants"
-    //     },
-    //     "created_at": 1680388629770
-    //   },
-    //   {
-    //     "user": {
-    //       "name": "Descartes",
-    //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-    //       "handle": "@rd"
-    //     },
-    //     "content": {
-    //       "text": "Je pense , donc je suis"
-    //     },
-    //     "created_at": 1680475029770
-    //   }
-    // ]

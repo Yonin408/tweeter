@@ -53,7 +53,6 @@ textarea {
 
 
 .uName {
-    display: flex;
     font-family: 'Bungee', cursive;
     font-size: 25px;
     opacity: .75;
@@ -139,4 +138,18 @@ textarea {
 
 .fa-solid:hover {
     color: rgb(208, 174, 41);
+}
+
+/*desktop view*/
+@media only screen and (min-width: 1024px) {
+    .container {
+        width: 50%;
+        float: right;
+        padding-top: 5em;
+    }    
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+    
 }
