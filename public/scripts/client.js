@@ -48,15 +48,15 @@ $(document).ready(function() {
             </div>
             ${$('<div>').text(obj.content.text).html()}
           </header>
-          <label class="date"></label>
-          <script>$('
-          .date').text(timeago.format(${obj.created_at}));</script>
+          <label class="date">${timeago.format(obj.created_at)}</label>
           <button class="interact"><i class="fa-solid fa-flag"></i></button>
           <button class="interact"><i class="fa-solid fa-retweet"></i></button>
           <button class="interact"><i class="fa-sharp fa-solid fa-heart"></i></button>
         </article>`);
       return $tweet;
     }
+
+    // <script>console.log($('.date').text(timeago.format(${obj.created_at})));</script>
     
     
    
