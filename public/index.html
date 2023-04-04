@@ -47,6 +47,12 @@
 
    <!-- Page-specific (main) content here -->
    <main class="container">
+          <form class="error-empty" action="/tweets">
+      <i class="fa-sharp fa-solid fa-circle-exclamation" style="color: #e50606;"></i>Error, empty tweetbox<i class="fa-sharp fa-solid fa-circle-exclamation" style="color: #e50606;"></i>
+          </form>
+          <form class="error-full" action="/tweets">
+            <i class="fa-sharp fa-solid fa-circle-exclamation" style="color: #e50606;"></i> You've entered too many characters<i class="fa-sharp fa-solid fa-circle-exclamation" style="color: #e50606;"></i>
+      </form>
     <form id="create-tweet">
     <h2>Compose Tweet</h2>
     <label for="tweet-text" class="tweets">What are you humming about?</label>

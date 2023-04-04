@@ -11,23 +11,29 @@ textarea {
     width: 100%;
 }
 
+
 #tweet {
     background-color: #4056A1;
     font-family: 'Bungee', cursive;
     color: white;
-font-size: 20px;
+    font-size: 20px;
 }
+
+
 .tweets {
     display: flex;
     font-family: 'Bungee', cursive;
     font-size: 20px;
     opacity: .75;
 }
+
+
 .counter {
     display: flex;
     justify-content: flex-end;
     font-family: 'Bungee', cursive;
 }
+
 
 .handle {
     display: flex;
@@ -39,11 +45,11 @@ font-size: 20px;
     /* margin-right: 1em; */
 }
 
+
 .main-content {
     display: flex;
     flex-direction: row;
 }
-
 
 
 .uName {
@@ -51,8 +57,29 @@ font-size: 20px;
     font-family: 'Bungee', cursive;
     font-size: 25px;
     opacity: .75;
+}
+.error-empty {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    border: #e4190e solid;
+    color: #e4190e;
+    border-width: 5px;
+    width: 80%;
+    padding: 25px;
+    margin: auto;
+}
 
-
+.error-full {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    border: #e4190e solid;
+    color: #e4190e;
+    border-width: 5px;
+    width: 80%;
+    padding: 25px;
+    margin: auto;
 }
 
 .tweet-header {
@@ -62,34 +89,38 @@ font-size: 20px;
 }
 
 .pTweet {
-    margin-left: 1em;
- 
+    margin-left: 1em; 
 }
+
 
 .tweet-content {
     margin-bottom: 20px;
 }
+
 
 .pBorder {
     border-bottom: solid rgba(0, 0, 0, 0.706) 5px;
     width: 95%;
     margin: auto;
 }
+
+
 .oBorder {
     height: 250px;
     border: solid rgba(0, 0, 0, 0.706) 5px;
-
 }
+
 
 .oBorder:hover {
     box-shadow: #4057a186 10px 10px;
-
 }
 
 
 .date {
     margin-left: 1.5em;
 }
+
+
 .interact {
     display: flex;
     float: right;
@@ -99,10 +130,12 @@ font-size: 20px;
     border: 0;
 }
 
+
 .fa-solid {
     color: #4056A1;
     margin: auto;
 }
+
 
 .fa-solid:hover {
     color: rgb(208, 174, 41);
