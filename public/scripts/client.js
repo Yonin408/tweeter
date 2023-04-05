@@ -6,38 +6,37 @@
 
 
 
- //jQuery document
+//jQuery document
 $(document).ready(function() {
-    const $form = $(`#create-tweet`);
+  const $form = $(`#create-tweet`);
 
-    $form.on('submit', (event) => {
-        event.preventDefault();
-        const urlencoded = $form.serialize();
-        console.log(urlencoded)
-        $('#tweet-text').val('');
-        $.ajax({
-            method: 'POST',
-            url: '/tweets',
-            data: urlencoded
-        }).then((response) => {
-            console.log(response)
-            loadTweets();
-            $('#tweets-container').empty();
-        })
-  
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    const urlencoded = $form.serialize();
+    $('#tweet-text').val('');
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: urlencoded
+    }).then((response) => {
+      console.log(response);
+      loadTweets();
+      $('#tweets-container').empty();
     });
+  
+  });
 
-    //renders tweets
-   const renderTweets = function(tweets) {
-      for (const key of tweets) {
-         const $tweet = createTweetElement(key)
-         $('#tweets-container').prepend($tweet);
-      }
+  //renders tweets
+  const renderTweets = function(tweets) {
+    for (const key of tweets) {
+      const $tweet = createTweetElement(key);
+      $('#tweets-container').prepend($tweet);
     }
+  };
    
-   //creates tweets from given object
-    const createTweetElement = function(obj) {
-      const $tweet = $(`
+  //creates tweets from given object
+  const createTweetElement = function(obj) {
+    const $tweet = $(`
         <article class="oBorder">
           <header class="pBorder">
             <div class="main-content">
@@ -53,15 +52,11 @@ $(document).ready(function() {
           <button class="interact"><i class="fa-solid fa-retweet"></i></button>
           <button class="interact"><i class="fa-sharp fa-solid fa-heart"></i></button>
         </article>`);
-      return $tweet;
-    }
+    return $tweet;
+  };
 
-    // <script>console.log($('.date').text(timeago.format(${obj.created_at})));</script>
-    
-    
-   
-   //loads tweets on page
-   const loadTweets = function() {
+  //loads tweets on page
+  const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweets) {
         console.log('Success: ', tweets);
@@ -70,8 +65,8 @@ $(document).ready(function() {
       .catch(function(error) {
         console.log('Error: ', error);
       });
-  }
+  };
 
-   loadTweets();
-    });
+  loadTweets();
+});
    
