@@ -1,4 +1,4 @@
-.pAccount {
+.user-account {
     height: 520px;
     width: 100%;
     background-color: #1f0100;
@@ -25,7 +25,7 @@ background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png
 
 /*desktop view*/
 @media only screen and (min-width: 1024px) {
-    .pAccount {
+    .user-account {
         width: 20%;
     }
 

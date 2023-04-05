@@ -19,7 +19,6 @@ $(document).ready(function() {
       url: '/tweets',
       data: urlencoded
     }).then((response) => {
-      console.log(response);
       loadTweets();
       $('#tweets-container').empty();
     });
