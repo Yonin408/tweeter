@@ -1,10 +1,10 @@
 $(document).ready(function() {
   const $form = $(`#create-tweet`);
-  let count = document.getElementById("counter");
   $form.on('submit', (event) => {
     event.preventDefault();
     let count = document.getElementById("counter");
     if (count.textContent < 0) {
+
       $('.error-full').slideDown().show();
       $('#tweet').attr('disabled', 'disabled');
     } else {
@@ -19,7 +19,6 @@ $(document).ready(function() {
         count.textContent = 140;
       })
         .catch((error) => {
-          alert('Error, unable to submit tweet');
         });
     }
   });

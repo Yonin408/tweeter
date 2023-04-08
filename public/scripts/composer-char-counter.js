@@ -13,7 +13,9 @@ $(document).ready(function() {
     }
     if (count.textContent < 0) {
       $('.error-full').slideDown().show();
+      count.style.color = '#f12505';
     } else {
+      count.style.color = 'inherit';
       $('.error-full').slideUp();
       $('#tweet').attr('disabled', false);
     }
