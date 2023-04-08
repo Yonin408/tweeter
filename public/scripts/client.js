@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const $form = $(`#create-tweet`);
-
+  let count = document.getElementById("counter");
   $form.on('submit', (event) => {
     event.preventDefault();
     let count = document.getElementById("counter");
@@ -16,6 +16,7 @@ $(document).ready(function() {
         data: urlencoded
       }).then((response) => {
         loadTweets();
+        count.textContent = 140;
       })
         .catch((error) => {
           alert('Error, unable to submit tweet');

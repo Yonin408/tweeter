@@ -26,10 +26,9 @@ $(document).ready(function() {
   });
   $('form').on('submit', (event) => {
     if (counter.value.trim().length === 0 || count.textContent < 0) {
-      event.preventDefault();
-    } else {
-      count.textContent = 140;
     }
+
+
   });
 
 });
