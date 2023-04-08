@@ -1,17 +1,14 @@
-/*
-* Client-side JS logic goes here
-* jQuery is already loaded
-* Reminder: Use (and do all your DOM work in) jQuery's document ready function
-*/
-
-
-
-//jQuery document
 $(document).ready(function() {
   const $form = $(`#create-tweet`);
 
   $form.on('submit', (event) => {
     event.preventDefault();
+    let count = document.getElementById("counter");
+    if (count.textContent < 0) {
+      $('.error-full').slideDown().show();
+      $('#tweet').attr('disabled', 'disabled');
+    }
+  else {
     const urlencoded = $form.serialize();
     $('#tweet-text').val('');
     $.ajax({
@@ -20,13 +17,12 @@ $(document).ready(function() {
       data: urlencoded
     }).then((response) => {
       loadTweets();
-      $('#tweets-container').empty();
     });
-  
+  }
   });
-
   //renders tweets
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (const key of tweets) {
       const $tweet = createTweetElement(key);
       $('#tweets-container').prepend($tweet);
