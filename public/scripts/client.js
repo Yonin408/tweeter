@@ -7,18 +7,20 @@ $(document).ready(function() {
     if (count.textContent < 0) {
       $('.error-full').slideDown().show();
       $('#tweet').attr('disabled', 'disabled');
+    } else {
+      const urlencoded = $form.serialize();
+      $('#tweet-text').val('');
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: urlencoded
+      }).then((response) => {
+        loadTweets();
+      })
+        .catch((error) => {
+          alert('Error, unable to submit tweet');
+        });
     }
-  else {
-    const urlencoded = $form.serialize();
-    $('#tweet-text').val('');
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: urlencoded
-    }).then((response) => {
-      loadTweets();
-    });
-  }
   });
   //renders tweets
   const renderTweets = function(tweets) {
